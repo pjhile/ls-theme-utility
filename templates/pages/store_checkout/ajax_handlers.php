@@ -1,13 +1,13 @@
 <?
-function set_billing_info($controller) {
+function on_updateBilling($controller) {
   Shop_CheckoutData::set_billing_info(null);
 }
 
-function set_shipping_info($controller) {
+function on_updateShipping($controller) {
   Shop_CheckoutData::set_shipping_info(null);
 }
 
-function copy_billing_info($controller) {
+function on_copyBillingToShipping($controller) {
   $billing_info = Shop_CheckoutData::get_billing_info();
 
   $shipping_info = Shop_CheckoutData::get_shipping_info();

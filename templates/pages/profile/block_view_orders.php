@@ -1,6 +1,7 @@
 <h1>My Orders</h1>
 
 <div class="box-1 wrap-12">
+<?= open_form() ?>
   <div class="col-12">
   <? if(!$orders->count): ?>
     <p>No orders yet.</p>
@@ -36,4 +37,5 @@
     </table>
   <? endif ?>
   </div>
+<?= close_form() ?>
 </div>

@@ -3,6 +3,7 @@ $pagination = $posts->paginate($this->request_param(0, 1)-1, $site_settings->new
 $posts = $posts->find_all();
 ?>
 
+<? if($posts): ?>
 <div class="col-8">
   <h1>News</h1>
   <p>Check here often for news and information on new products, events and tips.</p>
@@ -16,21 +17,19 @@ $posts = $posts->find_all();
       $l_1 = strlen($m1[0][1]);
       $l_2 = strlen($m1[1][1]);
      
-      if($l_1 < ($trim * 0.75) && $l_2 < $trim) {
-        $content = '<p>' . $m1[0][1] . '</p>' . '<p>' . $m1[1][1] . '</p>';//substr($content, 0, $l_1 + $l_2 + 7 + 7 + 2);
-      }
-      else if($l_1 < $trim) {
-        $content = '<p>' . $m1[0][1] . '</p>'; //substr($content, 0, $l_1 + 7);
-      }
-      else {
+      if($l_1 < ($trim * 0.75) && $l_2 < $trim)
+        $content = '<p>' . $m1[0][1] . '</p>' . '<p>' . $m1[1][1] . '</p>';
+      else if($l_1 < $trim)
+        $content = '<p>' . $m1[0][1] . '</p>';
+      else
         $content = '<p>' . substr($m1[0][1], 0, $trim) . ' ...</p>';
-      }
     }
   ?>
-    <h1 class="post-title"><a href="<?= root_url('/') ?>news/post/<?= $post->url_title ?>/"><?= h($post->title) ?></a></h1>
+    <h1 class="post-title"><a href="<?= root_url($site_settings->news->path) ?>/post/<?= $post->url_title ?>/"><?= h($post->title) ?></a></h1>
     <p class="post-details"><?= $post->published_date->format('%F') ?></p>
     <?= $content ?>
   <? endforeach ?>
     
   <? $this->render_partial('cms:pagination', array('pagination' => $pagination, 'base_url' => '/news')) ?>
 </div>
+<? endif ?>

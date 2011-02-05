@@ -1,51 +1,59 @@
 <div id="cycle" class="clearfix">
 <? 
 $group = Shop_CustomGroup::create()->find_by_code('frontpage');
-$products = $group->list_products()->limit(9)->apply_filters()->find_all();
 
-foreach($products as $i => $product):
-  $title_max_length = $site_settings->product_frontpage_item->max_title_length;
-  $title = strlen(h($product->name)) > $title_max_length ? trim(substr(h($product->name), 0, $title_max_length)) . '...' : h($product->name);
-  $url = $product->page_url($site_settings->store->product_path);
-  $width = $site_settings->product_frontpage_item->image->width;
-  $height = $site_settings->product_frontpage_item->image->height;
-  $image_url = $product->image_url(0, $width, $height, true, array('mode' => 'zoom_fit'));
-  
-  if(!$image_url)
-    $image_url = root_url($site_settings->product_frontpage_item->default_thumb_path);
+if($group):
+  $products = $group->list_products()->limit(9)->apply_filters()->find_all();
 ?>
-<? if($i % 3 == 0): ?>
-  <ul class="style-11 left">
+
+<? foreach($products as $i => $product):
+    $title_max_length = $site_settings->product_frontpage_item->max_title_length;
+    $title = strlen(h($product->name)) > $title_max_length ? trim(substr(h($product->name), 0, $title_max_length)) . '...' : h($product->name);
+    $url = $product->page_url($site_settings->store->product_path);
+    $width = $site_settings->product_frontpage_item->image->width;
+    $height = $site_settings->product_frontpage_item->image->height;
+    $image_url = $product->image_url(0, $width, $height, true, array('mode' => 'zoom_fit'));
+    
+    if(!$image_url)
+      $image_url = root_url($site_settings->product_frontpage_item->default_thumb_path);
+  ?>
+  <? if($i % 3 == 0): ?>
+    <ul class="style-11 left">
+  <? endif ?>
+      <li>
+        <a href="<?= $url ?>" title="<?= $title ?>">
+          <img src="<?= root_url($image_url) ?>" width="<?= $width ?>" height="<?= $height ?>" />
+          <h3><?= $title ?></h3>
+        </a>
+      </li>
+  <? if($i % 3 == 2): ?>
+    </ul>
+  <? endif ?>
+  <? endforeach ?>
 <? endif ?>
-    <li>
-      <a href="<?= $url ?>" title="<?= $title ?>">
-        <img src="<?= root_url($image_url) ?>" width="<?= $width ?>" height="<?= $height ?>" />
-        <h3><?= $title ?></h3>
-      </a>
-    </li>
-<? if($i % 3 == 2): ?>
-  </ul>
-<? endif ?>
-<? endforeach ?>
 </div>
 <div id="cycle-pagination"></div>
 
 <div class="col-12">
-  <? $group = Shop_CustomGroup::create()->find_by_code('featured') ?>
+<? $group = Shop_CustomGroup::create()->find_by_code('featured') ?>
+<? if($group): ?>
   <h3><?= h($group->name) ?></h3>
   
   <? $this->render_partial('shop:products', array(
     'style' => 1,
     'products' => $group->list_products()->limit(4)->apply_filters()
   )) ?>
+<? endif ?>
   
-  <? $group = Shop_CustomGroup::create()->find_by_code('sale') ?>
+<? $group = Shop_CustomGroup::create()->find_by_code('sale') ?>
+<? if($group): ?>
   <h3><?= h($group->name) ?></h3>
   
   <? $this->render_partial('shop:products', array(
     'style' => 1,
     'products' => $group->list_products()->limit(4)->apply_filters()
   )) ?>
+<? endif ?>
 </div>
 
 <div class="col-4">

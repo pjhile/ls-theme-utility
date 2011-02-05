@@ -1,4 +1,5 @@
 <div class="col-12">
+<?= open_form() ?>
   <ul class="form clearfix">
     <li class="field text clearfix">
       <label for="old_password">Old Password <span class="required">*</span></label>
@@ -18,4 +19,5 @@
     update: {'page': 'page:profile'},
     extraFields: {'section': 'change_password'}
   })">Save</a>
+<?= close_form() ?>
 </div>

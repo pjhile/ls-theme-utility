@@ -1,7 +1,7 @@
-<h3 class="style-2">Shipping Information <img src="<?= root_url('/') ?>resources/images/colors/<?= $site_settings->theme->color ?>/icon-copy.png" /> <a href="javascript:;" onclick="return $('#billing_info').sendRequest('set_billing_info', {
+<h3 class="style-2">Shipping Information <img src="<?= root_url('/') ?>resources/images/colors/<?= $site_settings->theme->color ?>/icon-copy.png" /> <a href="javascript:;" onclick="return $('#billing_info').sendRequest('on_updateBilling', {
       update: {'widget-cart': 'site:widget:cart'},
       onSuccess: function() {
-        LS.sendRequest('<?= Phpr::$request->getCurrentUri() ?>', 'copy_billing_info', {
+        LS.sendRequest('<?= Phpr::$request->getCurrentUri() ?>', 'on_copyBillingToShipping', {
           update: {'shipping_info': 'ls_cms_page'},
           extraFields: {
             'move_to': 'shipping_info',
@@ -72,10 +72,10 @@
     </li>
   </ul>
   <br /><br /><br /><br /><br />
-  <input class="button-1 right wide" type="submit" value="Next &#x2192;" onclick="return $('#shipping_info').sendRequest('set_shipping_info', {
+  <input class="button-1 right wide" type="submit" value="Next &#x2192;" onclick="return $('#shipping_info').sendRequest('on_updateShipping', {
       update: {'widget-cart': 'site:widget:cart'},
       onSuccess: function() {
-        $('#billing_info').sendRequest('set_billing_info', {
+        $('#billing_info').sendRequest('on_updateBilling', {
           update: {'page': 'ls_cms_page'},
           extraFields: {
             'checkout_step': '<?= $checkout_step ?>',

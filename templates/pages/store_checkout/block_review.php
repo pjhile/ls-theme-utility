@@ -158,11 +158,8 @@ extract(array_merge(array(
   <?
   $order = Shop_Order::create()->find_by_order_hash($order_hash);
   
-  if(!$order)
-    return null;
-  
-  if(!$order->payment_method)
-    return null;
+  if(!$order || !$order->payment_method)
+    return;
   
   $order->payment_method->define_form_fields();
   
@@ -170,8 +167,6 @@ extract(array_merge(array(
   $payment_method_obj->process_payment_form($_POST, $order->payment_method, $order);
   
   $return_page = $order->payment_method->receipt_page;
-  //if ($return_page)
-   // Phpr::$response->redirect(root_url($return_page->url.'/'.$order->order_hash));
   ?>
 <? endif ?>
 </div>

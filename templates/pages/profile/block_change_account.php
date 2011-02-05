@@ -1,4 +1,5 @@
 <div class="col-6">
+<?= open_form() ?>
   <ul class="form clearfix">
     <li class="field text left clearfix">
       <label for="first_name">First Name <span class="required">*</span></label>
@@ -22,9 +23,11 @@
       }
     })" value="Save" />
   </div>
+<?= close_form() ?>
 </div>
 
 <div class="col-6">
+<?= open_form() ?>
   <ul class="form clearfix">
     <li class="field text clearfix">
       <label for="old_password">Old Password <span class="required">*</span></label>
@@ -41,11 +44,12 @@
   </ul>
   
   <div class="submit-box right">
-    <input type="submit" onclick="return $(this).getForm().sendRequest('on_updatePassword', {
+    <input type="submit" onclick="return $(this).getForm().sendRequest('shopprofile:on_updatePassword', {
       extraFields: {'no_flash': true},
       onSuccess: function() {
         site.message.updatePassword();
       }
     })" value="Save" />
   </div>
+<?= close_form() ?>
 </div>

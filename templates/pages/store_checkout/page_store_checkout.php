@@ -1,6 +1,6 @@
 <?
 extract(array_merge(array(
-  'partial_step' => post('partial_step')
+  'partial_step' => post('partial_step', false)
 ), $params));
 ?>
 

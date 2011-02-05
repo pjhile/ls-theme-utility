@@ -8,14 +8,14 @@ if(!function_exists('site_settings')) {
       'company' => (object) array(
         'title' => Shop_CompanyInformation::get()->name,
         'slogan' => '',
-        'sales_email' => 'eric.muyser@gmail.com',//'sales@site.com',
-        'info_email' => 'eric.muyser@gmail.com',//'info@site.com',
+        'sales_email' => 'sales@site.com',
+        'info_email' => 'info@site.com',
         'twitter_page' => 'http://twitter.com/',
         'facebook_page' => 'http://www.facebook.com/',
         'youtube_page' => 'http://www.youtube.com/'
       ),
       'theme' => (object) array(
-        'color' => 'blue' // green or blue or orange
+        'color' => 'blue' // green, blue, or orange
       ),
       'customer' => (object) array(
         'default_email' => 'E-mail address',
@@ -46,7 +46,8 @@ if(!function_exists('site_settings')) {
         ),
       ),
       'news' => (object) array( 
-        'per_page' => 1,
+        'path' => '/news',
+        'per_page' => 5,
         'preview' => (object) array(
           'trim_length' => 300
         )
