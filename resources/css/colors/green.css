@@ -1,0 +1,38 @@
+/* @group COLOR VARIATION */
+
+a,
+ul.style-8 li h4 a,
+ul.style-8 li h4 a span,
+ul.style-10 li.inactive a,
+.product-detailed-item .price,
+.product-frontpage-item:hover .title,
+h3 a {
+	color: #74ab17;
+}
+
+.submit-box input:hover,
+.submit-box a:hover {
+	color: #74ab17 !important;
+}
+
+a#cycle-previous,
+a#cycle-next,
+#cycle-pagination a,
+.product-frontpage-item:hover .price {
+	background-color: #74ab17;
+}
+
+.button-1,
+.button-2,
+ul.style-1 li a:hover {
+	background-color: #82bf30;
+	-moz-box-shadow: inset 0px 0px 5px #62951f;
+	-webkit-box-shadow: inset 0px 0px 5px #62951f;
+	box-shadow: inset 0px 0px 5px #62951f;
+}
+
+ul.style-10 li.inactive {
+	background: url(../../images/colors/green/list-item-bullet-3.png) no-repeat 50% 100%;
+}
+
+/* @end */

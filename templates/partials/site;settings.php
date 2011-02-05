@@ -1,0 +1,96 @@
+<?
+
+if(!function_exists('site_settings')) {
+  function site_settings() {
+    return (object) array(
+      'date' => date('F, j'),
+      'charset' => 'utf-8',
+      'company' => (object) array(
+        'title' => Shop_CompanyInformation::get()->name,
+        'slogan' => '',
+        'sales_email' => 'eric.muyser@gmail.com',//'sales@site.com',
+        'info_email' => 'eric.muyser@gmail.com',//'info@site.com',
+        'twitter_page' => 'http://twitter.com/',
+        'facebook_page' => 'http://www.facebook.com/',
+        'youtube_page' => 'http://www.youtube.com/'
+      ),
+      'theme' => (object) array(
+        'color' => 'blue' // green or blue or orange
+      ),
+      'customer' => (object) array(
+        'default_email' => 'E-mail address',
+      ),
+      'meta' => (object) array(
+        'default_description' => "",
+        'default_keywords' => "",
+      ),
+      'search' => (object) array(
+        'path' => '/search',
+        'products_per_page' => 6
+      ),
+      'store' => (object) array(
+        'path' => '/store',
+        'product_path' => '/store/product',
+        'category_path' => '/store/category',
+        'cart_path' => '/store/cart',
+        'checkout_path' => '/store/checkout',
+        'pay_path' => '/store/pay',
+        'category' => (object) array(
+          'products_per_page' => 16,
+          'max_title_length' => 18,
+          'default_thumb_path' => '/resources/images/category-default-thumb.jpg',
+          'image' => (object) array(
+            'width' => 160,
+            'height' => 110
+          )
+        ),
+      ),
+      'news' => (object) array( 
+        'per_page' => 1,
+        'preview' => (object) array(
+          'trim_length' => 300
+        )
+      ),
+      'product_category_item' => (object) array(
+        'per_page' => 16,
+        'max_title_length' => 18,
+        'default_thumb_path' => 'resources/images/product-default-thumb.png',
+        'image' => (object) array(
+          'width' => 160,
+          'height' => 110
+        )
+      ),
+      'product_detailed_item' => (object) array(
+        'default_thumb_path' => 'resources/images/product-detail-default-thumb.png',
+        'image' => (object) array(
+          'small_width' => 100,
+          'small_height' => 70,
+          'medium_width' => 340,
+          'medium_height' => 255,
+          'large_width' => 1020,
+          'large_height' => 765
+        )
+      ),
+      'product_frontpage_item' => (object) array(
+        'per_page' => 15,
+        'max_title_length' => 24,
+        'max_description_length' => 23,
+        'default_thumb_path' => '/resources/images/product-frontpage-default-thumb.png',
+        'discount_path' => '/resources/images/price-strike.png',
+        'image' => (object) array(
+          'width' => 300,
+          'height' => 200
+        )
+      ),
+      'product_cart_item' => (object) array(
+        'default_thumb_path' => '/resources/images/product-default-thumb.png',
+        'image' => (object) array(
+          'width' => 55,
+          'height' => 45
+        )
+      )
+    );
+  }
+}
+
+return site_settings();

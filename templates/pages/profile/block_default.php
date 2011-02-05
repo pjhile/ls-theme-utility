@@ -1,0 +1,1 @@
+<p class="col-12">Hi, <?= h($this->customer->name) ?>! Here you can change information relating to your account.</p>

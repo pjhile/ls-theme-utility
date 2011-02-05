@@ -1,0 +1,38 @@
+/* @group COLOR VARIATION */
+
+a,
+ul.style-8 li h4 a,
+ul.style-8 li h4 a span,
+ul.style-10 li.inactive a,
+.product-detailed-item .price,
+.product-frontpage-item:hover .title,
+h3 a {
+	color: #ab9216;
+}
+
+.submit-box input:hover,
+.submit-box a:hover {
+	color: #ab9216 !important;
+}
+
+a#cycle-previous,
+a#cycle-next,
+#cycle-pagination a,
+.product-frontpage-item:hover .price {
+	background-color: #ab9216;
+}
+
+.button-1,
+.button-2,
+ul.style-1 li a:hover {
+	background-color: #bfa730;
+	-moz-box-shadow: inset 0px 0px 5px #94801f;
+	-webkit-box-shadow: inset 0px 0px 5px #94801f;
+	box-shadow: inset 0px 0px 5px #94801f;
+}
+
+ul.style-10 li.inactive {
+	background: url(../../images/colors/orange/list-item-bullet-3.png) no-repeat 50% 100%;
+}
+
+/* @end */

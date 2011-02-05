@@ -1,0 +1,1 @@
+<?= implode('<br><br>', array_reverse(explode("\n", file_get_contents(PATH_APP . '/logs/errors.txt')))) ?>

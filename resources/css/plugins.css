@@ -1,0 +1,105 @@
+/* lightbox */
+
+.jbar {
+  width: 100%;
+  background-color: #393536;
+  position: fixed;
+  height: 28px;
+  opacity: 0.90;
+  text-align: center;
+  color: #666;
+  left: 0px;
+  z-index: 9999999;
+  margin: 0px;
+  padding: 0px;
+  border: 0;
+}
+
+.jbar-top {
+  top: 0px;
+}
+
+.jbar-content {
+  display: block;
+  height: 25px;
+  width: 100%;
+  font: bold 15px/25px Arial, sans-serif;
+  border-bottom: 3px solid #b7b5b6;
+}
+
+/* cycle */
+
+a#cycle-previous {
+  width: 40px;
+  height: 59px;
+  display: block;
+  position: absolute;
+  background: url(../images/cycle-previous.png) no-repeat 0 0;
+  top: 100px;
+  left: -40px;
+}
+
+a#cycle-previous:hover {
+  background-position: 0 -59px;
+}
+
+a#cycle-next {
+  width: 40px;
+  height: 59px;
+  display: block;
+  position: absolute;
+  background: url(../images/cycle-next.png) no-repeat 0 0;
+  top: 100px;
+  right: -40px;
+}
+
+a#cycle-next:hover {
+  background-position: 0 -59px;
+}
+
+#cycle-pagination {
+  text-align: center;
+  padding-top: 7px;
+}
+
+#cycle-pagination a {
+  background: url(../images/bullets.png) 0 0 no-repeat;
+  width: 24px;
+  height: 24px;
+  margin: 0 5px 0 0;
+  display: inline-block;
+}
+
+#cycle-pagination a.selected {
+  background-position: 0 -24px;
+  cursor: default;
+}
+
+#cycle-pagination a span {
+  display: none;
+}
+
+.caroufredsel_wrapper {
+  margin-left: 10px;
+}
+
+/* cloud zoom */
+
+.cloud-zoom-lens {
+  border: 1px solid #888;
+  margin: -1px;
+  /* Set this to minus the border thickness. */
+  cursor: move;
+}
+
+.cloud-zoom-big {
+  overflow: hidden;
+  margin-left: 2px;
+}
+
+.cloud-zoom-loading {
+  color: white;
+  background: #222;
+  padding: 3px;
+  border: 1px solid #000;
+}
