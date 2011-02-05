@@ -75,7 +75,7 @@ ul.form select
 
 ul.form li
 {
-  margin-bottom: 5px;
+  margin: 5px 0;
 }
 
 ul.form li.checkbox div
