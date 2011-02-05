@@ -1,9 +1,9 @@
 <?
 
 if(!function_exists('close_form')) {
-  function close_form() {
-    return "</form>";
-  }
+	function close_form() {
+		return "</form>";
+	}
 }
 
 if(!function_exists('array_merge_recursive_distinct')) {
@@ -32,7 +32,7 @@ if(!function_exists('array_merge_recursive_distinct')) {
 }
 
 class Tweak_Helper {
-  public function __contruct() {
-    
-  }
+	public function __contruct() {
+		
+	}
 }
