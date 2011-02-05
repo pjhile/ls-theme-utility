@@ -15,19 +15,19 @@ $phone = post('phone', 'Phone');
     <input type="hidden" name="flash" value="Thank you! We will get back to you shortly." />
     
     <ul class="form clearfix">
-      <li class="field left text-box clearfix">
+      <li class="field text left text-box clearfix">
         <input class="inputify" type="text" maxlength="64" size="32" name="name" value="<?= $name ?>" />
       </li>
     
-      <li class="field left text-box clearfix">
+      <li class="field text left text-box clearfix">
         <input class="inputify" type="text" maxlength="2048" size="32" name="email" value="<?= $email ?>" />
       </li>
       
-      <li class="field text-area clearfix">
+      <li class="field text text-area clearfix">
         <textarea class="inputify" name="message" cols="32" rows="12"><?= $message ?></textarea>
       </li>
       
-      <li class="field left text-box clearfix">
+      <li class="field text left text-box clearfix">
         <input class="inputify" type="text" maxlength="64" size="32" name="phone" value="<?= $phone ?>" />
       </li>
     </ul>
