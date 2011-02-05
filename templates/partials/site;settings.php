@@ -11,14 +11,14 @@ if(!function_exists('site_settings')) {
         'sales_email' => 'sales@site.com',
         'info_email' => 'info@site.com',
         'twitter_page' => 'http://twitter.com/',
-        'facebook_page' => 'http://www.facebook.com/',
-        'youtube_page' => 'http://www.youtube.com/'
+        'facebook_page' => 'http://facebook.com/',
+        'youtube_page' => 'http://youtube.com/'
       ),
       'theme' => (object) array(
         'color' => 'blue' // green, blue, or orange
       ),
       'customer' => (object) array(
-        'default_email' => 'E-mail address',
+        'default_email' => 'E-mail address', // display on home, login, register pages
       ),
       'meta' => (object) array(
         'default_description' => "",
@@ -50,6 +50,9 @@ if(!function_exists('site_settings')) {
         'per_page' => 5,
         'preview' => (object) array(
           'trim_length' => 300
+        ),
+        'rss' => (object) array(
+          'per_page' => 20
         )
       ),
       'product_category_item' => (object) array(

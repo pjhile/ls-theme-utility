@@ -1,7 +1,7 @@
 <? if(!$post): ?>
-	<h1>Post not found!</h1>
+  <h1>Post not found!</h1>
   <p>Sorry, the post you were looking for is not found.</p>
-  <p>Return to the <a href="<?= root_url('/') ?>/news">News</a> page</p>
+  <p>Return to the <a href="<?= root_url($site_settings->news->path) ?>">News</a> page</p>
 <? return ?>
 <? endif ?>
 
