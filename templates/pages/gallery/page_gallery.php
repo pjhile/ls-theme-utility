@@ -24,11 +24,9 @@
           if(!file_exists($site_path . '/' . $new_path . '/' . $new_file))
             Phpr_Image::makeThumbnail($site_path . '/' . $old_path . '/' . $old_file, $site_path . '/' . $new_path . '/' . $new_file, 140, 105);
 
-      $data_list[] = array('image' => '/' . $old_path . '/' . $old_file, 'thumb' => '/' . $new_path . '/' . $new_file);
+      $data_list[] = array('image' => root_url('/') . $old_path . '/' . $old_file, 'thumb' => '/' . $new_path . '/' . $new_file);
     }
   ?>
-
-
 
   <script>
   $(window).load(function() {

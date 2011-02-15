@@ -11,7 +11,7 @@
         <a id="cycle-next" href="javascript:;"></a>
         <div id="page" class="wrap-16">
     <script src="<?= root_url('/') ?>resources/3rd/galleria.js"></script>
-    <script>Galleria.loadTheme('/resources/3rd/galleria_classic/galleria.classic.js');</script>
+    <script>Galleria.loadTheme('<?= root_url('/') ?>resources/3rd/galleria_classic/galleria.classic.js');</script>
           <? $this->render_page() ?>
         </div><!-- /#page -->
       </div><!-- /#content -->

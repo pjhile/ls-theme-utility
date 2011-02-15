@@ -1030,7 +1030,6 @@ input.short {
 }
 
 .slidify {
-  background: url(../images/list-bullet.png) no-repeat 98% 0;
 }
 
 .slidify:hover {
@@ -1038,7 +1037,6 @@ input.short {
 }
 
 .slidify.active {
-  background-image: url(../images/list-bullet-active.png);
 }
 
 /* @end */

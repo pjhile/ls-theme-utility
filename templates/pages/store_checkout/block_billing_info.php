@@ -85,7 +85,7 @@
 
 <script>
     setTimeout(function() {
-      LS.sendRequest('<?= Phpr::$request->getCurrentUri() ?>', 'on_action', {
+      LS.sendRequest('<?= root_url(Phpr::$request->getCurrentUri()) ?>', 'on_action', {
           update: {'shipping_info': 'ls_cms_page'},
           extraFields: {
             'move_to': 'shipping_info',

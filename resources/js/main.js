@@ -80,27 +80,31 @@ Phpr.response.popupError = function() {
 };
 
 jQuery(document).ready(function($) {
-  $('.style-4 a.parent span').bind('click', function() {
+	var sidebar = $('.style-4');
+	
+	var activate_sidebar_item = function() {
     $(this).parent().toggleClass('active').parent().toggleClass('active').children('ul:first').toggle();
 
     return false;
-  });
+  };
+	
+  $('a.parent span', sidebar).bind('click', activate_sidebar_item);
     
   function activate_menu(menu, timeout) {
     if(!timeout)
       timeout = 0;
     
     setTimeout(function() {
-      var current = menu.find('.active');
+      var current = menu.find('a.active');
     
       if(current.length)
-        current.parents('li').children('a').children('span').trigger('click');
+        $('span', current).each(activate_sidebar_item);
       else
-        menu.children('a').children('span').trigger('click');
+        $('a.parent span', menu).each(activate_sidebar_item);
     }, timeout);
   }
   
-  activate_menu($('.style-4'), 1 * 0);
+  activate_menu(sidebar, 1 * 0);
   
   $('.cloud-zoom').livequery(function() {
     $(this).CloudZoom();
