@@ -16,7 +16,7 @@ table {
   border-collapse: collapse; 
   border-spacing: 0; 
   vertical-align: top;
-} 
+}
 
 fieldset, img, input {  
   border: 0 none;
@@ -337,7 +337,6 @@ ul.style-1 {
   
   ul.style-1 li a.active {
     color: #fff;
-    background: url(../images/list-item-bullet-1-active.png) no-repeat 49% 100%;
    }
    
      ul.style-1 li a.active:hover {
@@ -352,7 +351,6 @@ ul.style-1 {
   
   ul.style-1 li a.active:hover {
     color: #fff;
-    background: url(../images/list-item-bullet-1-active.png) no-repeat 49% 100%;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;

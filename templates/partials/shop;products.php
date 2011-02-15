@@ -41,7 +41,7 @@ foreach($items as $product):
     $title = strlen(h($product->name)) > $title_max_length ? trim(substr(h($product->name), 0, $title_max_length)) . '...' : h($product->name);
       
     if(!$image_url)
-      $image_url = root_url($site_settings->product_category_item->default_thumb_path);
+      $image_url = $site_settings->product_category_item->default_thumb_path;
     ?>
     <a class="product-frontpage-item" href="<?= $url ?>" title="<?= h($product->name) ?>">
       <img src="<?= root_url($image_url) ?>" width="<?= $width ?>" height="<?= $height ?>" />
@@ -57,7 +57,7 @@ foreach($items as $product):
     $image_url = $product->image_url(0, $width, $height, true, array('mode' => 'zoom_fit'));
     
     if(!$image_url)
-      $image_url = root_url($site_settings->product_category_item->default_thumb_path);
+      $image_url = $site_settings->product_category_item->default_thumb_path;
     ?>
     <div class="product-category-item col-4">
       <?= open_form() ?>
@@ -101,7 +101,7 @@ foreach($items as $product):
     $image_url = $product->image_url(0, $width, $height, true, array('mode' => 'zoom_fit'));
     
     if(!$image_url)
-      $image_url = root_url($site_settings->product_related_item->default_thumb_path);
+      $image_url = $site_settings->product_related_item->default_thumb_path;
     ?>
     <a class="product-related-item" href="<?= $url ?>" title="<?= h($product->name) ?>" class="clearfix"><? if($is_special): ?><span class="special"></span><? endif ?><img src="<?= $image_url ?>" width="<?= $width ?>" height="<?= $height ?>" /></a>
   <? elseif($style == 5): ?>
@@ -113,14 +113,14 @@ foreach($items as $product):
     $title = strlen(h($product->name)) > $title_max_length ? trim(substr(h($product->name), 0, $title_max_length)) . '...' : h($product->name);
     
     if(!$image_url)
-      $image_url = root_url($site_settings->product_compared_item->default_thumb_path);
+      $image_url = $site_settings->product_compared_item->default_thumb_path;
     ?>
     <div class="product-compared-item">
     <?
     $attributes = $item->attributes;
     ?>
       <a href="<?= $url ?>" title="<?= h($product->name) ?>">
-        <img src="<?= $image_url ?>" alt="<?= $title ?>" width="<?= $width ?>" height="<?= $height ?>" />
+        <img src="<?= root_url($image_url) ?>" alt="<?= $title ?>" width="<?= $width ?>" height="<?= $height ?>" />
       </a>
     
       <h2><a href="<?= $url ?>" title="<?= h($product->name) ?>"><?= $title ?></a></h2>

@@ -21,6 +21,10 @@ $meta_keywords = ($meta_keywords = h($this->page->keywords)) ? $meta_keywords : 
       '/resources/css/main.css',
       '/resources/css/plugins.css',
       '/resources/css/colors/' . $site_settings->theme->color . '.css'
+    ),
+    array(
+      'src_mode' => true,
+      'reset_cache' => true
     )) ?>
 
     <?= $this->js_combine(array(

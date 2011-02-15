@@ -15,7 +15,7 @@ if($group):
     $image_url = $product->image_url(0, $width, $height, true, array('mode' => 'zoom_fit'));
     
     if(!$image_url)
-      $image_url = root_url($site_settings->product_frontpage_item->default_thumb_path);
+      $image_url = $site_settings->product_frontpage_item->default_thumb_path;
   ?>
   <? if($i % 3 == 0): ?>
     <ul class="style-11 left">
