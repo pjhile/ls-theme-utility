@@ -28,7 +28,7 @@ foreach($images as $old_file) {
 
 	$root_url = root_url('/');
 
-	$data_list[] = array('image' => $root_url . $old_path . $root_url . $old_file, 'thumb' => $root_url . $new_path . $root_url . $new_file);
+	$data_list[] = array('image' => $root_url . $old_path . '/' . $old_file, 'thumb' => $root_url . $new_path . '/' . $new_file);
 }
 ?>
 
