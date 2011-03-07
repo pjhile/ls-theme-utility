@@ -1,8 +1,8 @@
 <? if(!$product): ?>
-  <h2>We are sorry, product not found.</h2>
+  <h2>We are sorry, that product was not found.</h2>
 <? return ?>
 <? elseif($product_unavailable): ?>
-  <h2>We are sorry, product unavailable.</h2>
+  <h2>We are sorry, that product is unavailable.</h2>
 <? return ?>
 <? endif ?>
 
@@ -164,7 +164,7 @@ extract((array) $site_settings->product_detailed_item->image);
       <div class="right clear-right">
         <div class="text-box left">
           <input type="text" name="product_cart_quantity" value="1" size="3" />
-         </div>
+        </div>
         <a class="button-1 left" href="javascript:;" onclick="$(this).getForm().sendRequest('shop:on_addToCart', {
           update: {'widget-cart': 'site:widget:cart'}, 
           extraFields: {'no_flash': true},
