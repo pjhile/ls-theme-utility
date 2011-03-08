@@ -18,8 +18,11 @@
     
     if(!$item->navigation_visible) // beware of ninjas
       continue;
+    
+    $url = root_url($item->url);
+    $title = h($item->navigation_label());
   ?>
-    <li><a href="<?= root_url($item->url) ?>" title="Go to <?= h($item->title) ?>"><?= h($item->title) ?></a></li>
+    <li><a href="<?= $url ?>" title="Go to <?= $title ?>"><?= $title ?></a></li>
   <? endforeach ?>
   </ul>
   <br /><br /><br /><br />
@@ -28,9 +31,26 @@
   </p>
 
   <p id="policy" class="right text-right">
-    <a href="<?= root_url('/') ?>terms/">Terms &amp; Conditions</a> &nbsp;|&nbsp; 
-    <a href="<?= root_url('/') ?>privacy/">Privacy Policy</a> &nbsp;|&nbsp; 
-    <a href="<?= root_url('/') ?>refunds/">Refund Policy</a>
+	  <?
+	  $pages = array(
+	    '/terms', 
+	    '/privacy', 
+	    '/refunds'
+	  );
+	  
+	  foreach($pages as $i => $page):
+	    if(!$item = Cms_Page::create()->find_by_url($page))
+	      continue;
+	    
+	    if(!$item->navigation_visible) // beware of ninjas
+	      continue;
+	    
+	    $url = root_url($item->url);
+	    $title = h($item->navigation_label());
+	    $is_last = $i == count($pages) - 1;
+	  ?>
+    	<a href="<?= $url ?>" title="Go to <?= $title ?>"><?= $title ?></a><? if(!$is_last): ?> &nbsp;|&nbsp; <? endif ?>
+	  <? endforeach ?>
   </p>
 </div><!-- /#navigation-bottom -->
 
