@@ -15,10 +15,7 @@
     </div><!-- /#wrapper -->
     <div id="footer-wrapper" class="wrap-16 margin-center clearfix">
 	    <div id="footer" class="col-16 clearfix">
-	      <? $this->render_partial('site:footer', array(), array(
-					'cache' => true,
-					'cache_ttl' => 1800
-				)) ?>
+	      <? $this->render_partial('site:footer') ?>
 	    </div><!-- /#footer -->
 	  </div><!-- /#footer-wrapper -->
     <? $this->render_partial('site:foot') ?>
