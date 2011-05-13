@@ -25,6 +25,13 @@ $sales_email = $site_settings->company->sales_email;
 <? endforeach ?>
 </ul>
 
+<input class="button-1 right wide" type="submit" value="Next &#x2192;" onclick="return $('#payment_method').sendRequest('on_action', {
+  update: {'page': 'ls_cms_page'},
+  extraFields: {
+    'skip_to': 'review'
+  }
+})" />
+
 <script>
   $('#payment_method input[type=radio]').click(function() {
     return $('#payment_method').sendRequest('on_action', {

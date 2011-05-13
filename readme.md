@@ -21,6 +21,7 @@ in your store. Alternatively, and for version control, the `templates` directory
 This package contains module dependencies, located in the `modules` directory. Please follow these instructions:  
 1. In the `modules` directory, please select all folders, right click, and copy them.  
 2. Go to the `modules` directory in your LemonStand installation, right click, and paste them.  
+3. Log out of LemonStand, and log back in.
 
 Configuration
 ---------------------------------------------------------------------------------------------------
@@ -73,4 +74,5 @@ Support
 ---------------------------------------------------------------------------------------------------
 
 Please visit the LemonStand forums (http://forum.lemonstandapp.com/) for community support.
+If you encounter a bug, please check/use the GitHub issues tracker.
 

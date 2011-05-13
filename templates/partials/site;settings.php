@@ -30,6 +30,7 @@ if(!function_exists('site_settings')) {
       ),
       'store' => (object) array(
         'path' => '/store',
+        'pay_path' => '/pay',
         'product_path' => '/store/product',
         'category_path' => '/store/category',
         'cart_path' => '/store/cart',

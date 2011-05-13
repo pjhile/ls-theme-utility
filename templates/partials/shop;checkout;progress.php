@@ -1,9 +1,17 @@
 <?
-$steps = array(
-  'billing_info' => '1. Billing & Shipping Info',
-  'shipping_method' => '2. Payment & Shipping Method',
-  'review' => '3. Review & Pay'
-);
+  if(Shop_CheckoutData::shipping_required()) {
+    $steps = array(
+      'billing_info' => '1. Billing & Shipping Info',
+      'shipping_method' => '2. Payment & Shipping Method',
+      'review' => '3. Review & Pay'
+    );
+  }
+  else {
+    $steps = array(
+      'billing_info' => '1. Billing Info & Method',
+      'review' => '2. Review & Pay'
+    );
+  }
 ?>
 
 <ul class="style-10 margin-center">
@@ -69,8 +77,8 @@ foreach($steps2 as $i => $step):
     <?= format_currency($estimated_total) ?>
   </li>
   <li class="billing">
-    <span class="color-3">Bill to:</span> 
     <? if($billing_info->first_name): ?>
+    <span class="color-3">Bill to:</span> 
       <?= $billing_info->first_name ?> <?= $billing_info->last_name ?>,
       <?= $billing_info->street_address ?>,
       <?= $billing_info->city ?>,
@@ -78,8 +86,8 @@ foreach($steps2 as $i => $step):
       <?= $billing_info->zip ?>
     <? endif ?>
     <br />
-    <span class="color-3">Ship to:</span>
     <? if($shipping_info->first_name): ?>
+    <span class="color-3">Ship to:</span>
       <?= $shipping_info->first_name ?> <?= $shipping_info->last_name ?>,
       <?= $shipping_info->street_address ?>, 
       <?= $shipping_info->city ?>,

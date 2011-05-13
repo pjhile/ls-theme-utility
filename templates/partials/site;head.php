@@ -10,7 +10,6 @@ $meta_keywords = ($meta_keywords = h($this->page->keywords)) ? $meta_keywords : 
     <meta charset="<?= $charset ?>" />
     <meta name="description" content="<?= $meta_description ?>" />
     <meta name="keywords" content="<?= $meta_keywords ?>" />
-
     <!--[if lt IE 8]><script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js"></script><![endif]--> 
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 

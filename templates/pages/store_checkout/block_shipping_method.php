@@ -17,6 +17,7 @@ extract(array_merge(array(
   
   <ul class="form clearfix">
     <? foreach($shipping_options as $option): ?>
+      <? if($option->ls_api_code == 'no_shipping_required') continue ?>
       <? if($option->multi_option): ?>
         <h4><?= h($option->name) ?></h4>
         
@@ -50,7 +51,6 @@ extract(array_merge(array(
     <? endforeach ?>
   </ul>
   <script>
-  setTimeout(function() {
     $('#shipping_method input[type=radio]').click(function() {
       $('#shipping_method').sendRequest('on_action', {
         update: {'payment_method': 'ls_cms_page'},
@@ -61,7 +61,6 @@ extract(array_merge(array(
         }
       });
     });
-  }, 0);
   </script>
 <?= close_form() ?>
 </div>
@@ -82,17 +81,15 @@ extract(array_merge(array(
         }
       })">change</a>)
     </p>
+  
+    <input class="button-1 right wide" type="submit" value="Next &#x2192;" onclick="return $('#payment_method').sendRequest('on_action', {
+      update: {'page': 'ls_cms_page'},
+      extraFields: {
+        'skip_to': 'review'
+      }
+    })" />
   <? else: ?>
     <p>Please choose a shipping method first.</p>
   <? endif ?>
   <?= close_form() ?>
-  
-  <br /><br /><br /><br /><br />
-  
-  <input class="button-1 right wide" type="submit" value="Next &#x2192;" onclick="return $('#payment_method').sendRequest('on_action', {
-    update: {'page': 'ls_cms_page'},
-    extraFields: {
-      'skip_to': 'review'
-    }
-  })" />
 </div>

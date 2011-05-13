@@ -1,3 +1,11 @@
+<?
+  $next_step = Shop_CheckoutData::shipping_required() ? 'shipping_info' : 'payment_method';
+  
+  if($next_step === 'payment_method') {
+    if($shipping_method = Shop_ShippingOption::find_by_api_code('no_shipping_required'))
+      Shop_CheckoutData::set_shipping_method($shipping_method->id);
+  }
+?>
 <div class="col-8">
 <?= open_form(array('id' => 'billing_info')) ?>
   <h3 class="style-2">Billing Information</h3>
@@ -75,22 +83,43 @@
     </li>
     <? endif ?>
   </ul>
-<?= close_form() ?>
-</div>
-
-<div class="col-8">
-<?= open_form(array('id' => 'shipping_info')) ?>
-<?= close_form() ?>
-</div>
-
-<script>
-    setTimeout(function() {
-      LS.sendRequest('<?= root_url(Phpr::$request->getCurrentUri()) ?>', 'on_action', {
+  <? if($next_step == 'payment_method'): ?>
+  <input class="button-1 right wide" type="submit" value="Next &#x2192;" onclick="return $('#billing_info').sendRequest('on_updateBilling', {
+      update: {'widget-cart': 'site:widget:cart'},
+      onSuccess: function() {
+        LS.sendRequest('<?= Phpr::$request->getCurrentUri() ?>', 'on_copyBillingToShipping', {
           update: {'shipping_info': 'ls_cms_page'},
           extraFields: {
             'move_to': 'shipping_info',
             'partial_step': true
+          },
+          onSuccess: function() {
+            LS.sendRequest('<?= root_url(Phpr::$request->getCurrentUri()) ?>', 'on_action', {
+              update: {'payment_method': 'ls_cms_page'},
+              extraFields: {
+                'skip_to': 'payment_method',
+                'partial_step': true
+              }
+            });
           }
-      });
-    }, 1);
+        });
+      }
+    })" />
+  <? elseif($next_step == 'shipping_info'): ?>
+  <script>
+    LS.sendRequest('<?= root_url(Phpr::$request->getCurrentUri()) ?>', 'on_action', {
+        update: {'shipping_info': 'ls_cms_page'},
+        extraFields: {
+          'move_to': 'shipping_info',
+          'partial_step': true
+        }
+    });
   </script>
+  <? endif ?>
+<?= close_form() ?>
+</div>
+
+<div class="col-8">
+<?= open_form(array('id' => $next_step)) ?>
+<?= close_form() ?>
+</div>
