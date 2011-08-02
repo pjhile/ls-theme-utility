@@ -1,7 +1,7 @@
 <h3 class="style-2">Shipping Information <img src="<?= root_url('/') ?>resources/images/colors/<?= $site_settings->theme->color ?>/icon-copy.png" /> <a href="javascript:;" onclick="return $('#billing_info').sendRequest('on_updateBilling', {
       update: {'widget-cart': 'site:widget:cart'},
       onSuccess: function() {
-        LS.sendRequest('<?= Phpr::$request->getCurrentUri() ?>', 'on_copyBillingToShipping', {
+        LS.sendRequest('<?= root_url(Phpr::$request->getCurrentUri()) ?>', 'on_copyBillingToShipping', {
           update: {'shipping_info': 'ls_cms_page'},
           extraFields: {
             'move_to': 'shipping_info',

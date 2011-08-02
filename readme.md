@@ -60,6 +60,12 @@ folder.
 - Dialog message box text is located in the `resources/js/main.js` file.
 
 
+Warning: 
+Self-hosted payment methods currently require their payment form partials to be edited to POST to the Pay page, like so:
+[http://bit.ly/kQ0oRN](http://bit.ly/kQ0oRN)
+
+	<?= open_form(array('action' => root_url($site_settings->store->pay_path . '/' . $order->order_hash))) ?>
+
 Notes
 ---------------------------------------------------------------------------------------------------
 
@@ -73,6 +79,6 @@ payment form.
 Support
 ---------------------------------------------------------------------------------------------------
 
-Please visit the LemonStand forums (http://forum.lemonstandapp.com/) for community support.
+Please visit the [LemonStand forums](http://forum.lemonstandapp.com/) for community support.
 If you encounter a bug, please check/use the GitHub issues tracker.
 
