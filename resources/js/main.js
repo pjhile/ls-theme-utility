@@ -67,15 +67,15 @@ window.site = jQuery.extend(true, window.site ? window.site : {}, {
   }
 });
 
-Phpr.showLoadingIndicator = function() {
+LS.showLoadingIndicator = function() {
   site.message.custom('Processing...', {background_color: '#393536', color: '#fff', time: 999999});
 };
 
-Phpr.hideLoadingIndicator = function() {
+LS.hideLoadingIndicator = function() {
   site.message.remove();
 };
 
-Phpr.response.popupError = function() {
+LS.response.popupError = function() {
   site.message.custom(this.html.replace('@AJAX-ERROR@', ''), {background_color: '#393536', color: '#cc7c7c', time: 10000});
 };
 
