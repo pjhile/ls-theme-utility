@@ -12,7 +12,7 @@ if($group):
     $url = $product->page_url($site_settings->store->product_path);
     $width = $site_settings->product_frontpage_item->image->width;
     $height = $site_settings->product_frontpage_item->image->height;
-    $image_url = $product->image_url(0, $width, $height, true, array('mode' => 'zoom_fit'));
+    $image_url = $product->image_url(0, $width, $height, true);
     
     if(!$image_url)
       $image_url = $site_settings->product_frontpage_item->default_thumb_path;

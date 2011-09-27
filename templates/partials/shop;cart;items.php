@@ -25,7 +25,7 @@ extract(array_merge(array(
       $title = h($item->product->name);
       $width = $site_settings->product_cart_item->image->width;
       $height = $site_settings->product_cart_item->image->height;
-      $image_url = $item->product->image_url(0, $width, $height, true, array('mode' => 'zoom_fit'));
+      $image_url = $item->product->image_url(0, $width, $height, true);
       $image_description = count($item->product->images) ? h($item->product->images[0]->description) : $title;
       $options_str = $item->options_str();
       

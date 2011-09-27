@@ -28,7 +28,7 @@
     <tbody>
       <?
       foreach($items as $item):
-        $image_url = $item->product->image_url(0, 60, 'auto', true, array('mode' => 'zoom_fit'));
+        $image_url = $item->product->image_url(0, 60, 'auto', true);
       ?>
       <tr>
         <td class="first">

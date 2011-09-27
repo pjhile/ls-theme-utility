@@ -141,7 +141,7 @@ if($use_list_classes) {
       $title = strlen(h($item->name)) > $title_max_length ? trim(substr(h($item->name), 0, $title_max_length)) . '...' : h($item->name);
       $width = $site_settings->store->category->image->width;
       $height = $site_settings->store->category->image->height;
-      $image_url = $item->image_url(0, $width, $height, true, array('mode' => 'zoom_fit'));
+      $image_url = $item->image_url(0, $width, $height, true);
       
       if(!$image_url)
         $image_url = root_url($site_settings->store->category->default_thumb_path);

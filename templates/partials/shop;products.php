@@ -35,7 +35,7 @@ foreach($items as $product):
     <? 
     $width = $site_settings->product_category_item->image->width;
     $height = $site_settings->product_category_item->image->height;
-    $image_url = $product->image_url(0, $width, $height, true, array('mode' => 'zoom_fit'));
+    $image_url = $product->image_url(0, $width, $height, true);
     $title_max_length = $site_settings->product_category_item->max_title_length;
     $title = strlen(h($product->name)) > $title_max_length ? trim(substr(h($product->name), 0, $title_max_length)) . '...' : h($product->name);
       

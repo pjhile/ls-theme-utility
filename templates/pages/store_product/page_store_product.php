@@ -49,8 +49,8 @@ extract((array) $site_settings->product_detailed_item->image);
     
     if(count($images)):
       $image_description = strlen($images[0]->description) ? h($images[0]->description) : $title;
-      $medium_url = $images[0]->getThumbnailPath($medium_width, $medium_height, true, array('mode' => 'zoom_fit'));
-      $large_url = $images[0]->getThumbnailPath($large_width, $large_height, true, array('mode' => 'zoom_fit'));
+      $medium_url = $images[0]->getThumbnailPath($medium_width, $medium_height, true);
+      $large_url = $images[0]->getThumbnailPath($large_width, $large_height, true);
     ?>
       <a id="gallery-viewport" class="cloud-zoom" href="<?= $large_url ?>" rel="position: 'right', showTitle: false, zoomWidth: 360, zoomHeight: 255">
         <img src="<?= $medium_url ?>" alt="<?= $image_description ?>" width="<?= $medium_width ?>" height="<?= $medium_height ?>" />
@@ -64,9 +64,9 @@ extract((array) $site_settings->product_detailed_item->image);
         <ul class="gallery-thumbs style-6 clearfix">
         <?
         foreach($images as $i => $item):
-          $small_url = $item->getThumbnailPath($small_width, $small_height, true, array('mode' => 'zoom_fit'));
-          $medium_url = $item->getThumbnailPath($medium_width, $medium_height, true, array('mode' => 'zoom_fit'));
-          $large_url = $item->getThumbnailPath($large_width, $large_height, true, array('mode' => 'zoom_fit'));
+          $small_url = $item->getThumbnailPath($small_width, $small_height, true);
+          $medium_url = $item->getThumbnailPath($medium_width, $medium_height, true);
+          $large_url = $item->getThumbnailPath($large_width, $large_height, true);
           $image_description = strlen($item->description) ? h($item->description) : $title;
         ?>
           <li>
@@ -187,5 +187,4 @@ extract((array) $site_settings->product_detailed_item->image);
     )) ?>
   </div>
 <? endif ?>
-</div>
 <?= close_form() ?>
