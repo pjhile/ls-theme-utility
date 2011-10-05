@@ -91,7 +91,7 @@ $zip = $shipping_info->zip ? h($shipping_info->zip) : 'Zip Code';
     <div class="clear clearfix border-1 p-10">
         <label class="left" for="coupon-code">Do you have a coupon?</label>
         <div class="text-box left">
-          <input id="coupon-code" type="text" name="coupon" value="" size="7" onkeyup="event.keyCode == 13 ? $(this).getForm().sendRequest('on_action', {
+          <input id="coupon-code" type="text" name="coupon" value="<?= $coupon_code ?>" size="7" onkeyup="event.keyCode == 13 ? $(this).getForm().sendRequest('on_action', {
             update: {
               'page': 'ls_cms_page', 
               'site-widget-cart': 'site:widget:cart'
