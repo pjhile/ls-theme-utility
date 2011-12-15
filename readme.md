@@ -5,18 +5,18 @@ Instructions for LemonStand theme: "Utility"
 Installation
 ---------------------------------------------------------------------------------------------------
 
-This package contains a CMS export of the theme, with file name `cms.lca`. In order to import this 
+This package contains a CMS export of the theme, with file name `utility.lca`. In order to import this 
 theme, please follow these instructions:  
 1. Log in to your LemonStand store.  
 2. Select the `CMS` section from the menu.  
-3. Select `Export or Import` from the sub-menu.  
-4. Choose `Import pages, partials and templates`.  
-5. Click `Choose file`, locate and select `cms.lca` from your harddrive, and then choose `Import`.  
-6. Allow LemonStand to upload and import the CMS templates.  
+3. Select `Themes` from the sub-menu. If you do not see `Themes`, please make sure your installation is up-to-date.  
+4. Choose `Import theme.`.  
+5. Click `Choose file`, locate and select `utility.lca` from your harddrive, and then choose `Import`.  
+6. Allow LemonStand to upload and import the CMS theme.  
 7. Follow the configuration instructions below.  
 
-Please note the CMS templates (pages, partials, layouts) will be merged with any already existing 
-in your store. Alternatively, and for version control, the `templates` directory contains filesystem CMS templates.
+Alternatively, and for version control, the `templates` directory contains filesystem CMS templates. 
+The primary purpose of these is to track template changes.
 
 This package contains module dependencies, located in the `modules` directory. Please follow these instructions:  
 1. In the `modules` directory, please select all folders, right click, and copy them.  
@@ -54,10 +54,10 @@ Product Group with an API code of `sale`.
 
 Structure:
 
-- Gallery images can be located in the `resources/images/gallery` folder.
-- Color related variations can be found in `resources/css` folder, and `resources/images/colors` 
+- Gallery images can be located in the `themes/utility/resources/images/gallery` folder.
+- Color related variations can be found in `themes/utility/resources/css` folder, and `themes/utility/resources/images/colors` 
 folder.
-- Dialog message box text is located in the `resources/js/main.js` file.
+- Dialog message box text is located in the `themes/utility/resources/js/main.js` file.
 
 
 Warning: 
@@ -80,5 +80,4 @@ Support
 ---------------------------------------------------------------------------------------------------
 
 Please visit the [LemonStand forums](http://forum.lemonstandapp.com/) for community support.
-If you encounter a bug, please check/use the GitHub issues tracker.
-
+If you encounter a bug, please check/use the **GitHub** issues tracker.
