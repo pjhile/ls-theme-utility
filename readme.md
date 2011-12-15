@@ -10,7 +10,7 @@ theme, please follow these instructions:
 1. Log in to your LemonStand store.  
 2. Select the `CMS` section from the menu.  
 3. Select `Themes` from the sub-menu. If you do not see `Themes`, please make sure your installation is up-to-date.  
-4. Choose `Import theme.`.  
+4. Choose `Import theme`.  
 5. Click `Choose file`, locate and select `utility.lca` from your harddrive, and then choose `Import`.  
 6. Allow LemonStand to upload and import the CMS theme.  
 7. Follow the configuration instructions below.  
