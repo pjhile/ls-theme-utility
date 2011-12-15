@@ -16,7 +16,7 @@
   </ul>
   
   <div class="submit-box right">
-    <input type="submit" onclick="return $(this).getForm().sendRequest('shopprofile:on_updateAccount', {
+    <input type="submit" onclick="return $(this).getForm().sendRequest('profile:on_updateAccount', {
       extraFields: {'no_flash': true},
       onSuccess: function() {
         site.message.updateAccount();
@@ -44,7 +44,7 @@
   </ul>
   
   <div class="submit-box right">
-    <input type="submit" onclick="return $(this).getForm().sendRequest('shopprofile:on_updatePassword', {
+    <input type="submit" onclick="return $(this).getForm().sendRequest('profile:on_updatePassword', {
       extraFields: {'no_flash': true},
       onSuccess: function() {
         site.message.updatePassword();

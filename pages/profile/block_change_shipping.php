@@ -5,9 +5,9 @@ $shipping_country = $shipping_info->country ? $shipping_info->country : $shippin
 $shipping_states = Shop_CountryState::create(true)->where('country_id=?', $shipping_country)->order('name')->find_all();
 ?>
 
-  <h3 class="style-2 block left">Shipping Information <img src="<?= theme_resource_url('resources/images/colors/' . $site_settings->theme->color . '/icon-copy.png') ?>" /> <a href="javascript:;" onclick="return $('#billing_info').sendRequest('shopprofile:on_updateBilling', {
+  <h3 class="style-2 block left">Shipping Information <img src="<?= theme_resource_url('images/colors/' . $site_settings->theme->color . '/icon-copy.png') ?>" /> <a href="javascript:;" onclick="return $('#billing_info').sendRequest('profile:on_updateBilling', {
       onSuccess: function() {
-        LS.sendRequest('<?= Phpr::$request->getCurrentUri() ?>', 'shopprofile:on_copyBillingToShipping', {
+        LS.sendRequest('<?= Phpr::$request->getCurrentUri() ?>', 'profile:on_copyBillingToShipping', {
           update: {'shipping_info': 'ls_cms_page'},
           extraFields: {
             'section': 'change_shipping',
@@ -80,7 +80,7 @@ $shipping_states = Shop_CountryState::create(true)->where('country_id=?', $shipp
   </ul>
   
   <div class="submit-box right">
-    <input type="submit" onclick="return $(this).getForm().sendRequest('shopprofile:on_updateShipping', {
+    <input type="submit" onclick="return $(this).getForm().sendRequest('profile:on_updateShipping', {
       extraFields: {'no_flash': true},
       onSuccess: function() {
         site.message.updateShipping();

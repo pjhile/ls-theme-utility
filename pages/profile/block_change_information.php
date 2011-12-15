@@ -69,7 +69,7 @@ $billing_states = Shop_CountryState::create(true)->where('country_id=?', $billin
   </ul>
 
   <div class="submit-box right">
-    <input type="submit" onclick="return $(this).getForm().sendRequest('shopprofile:on_updateBilling', {
+    <input type="submit" onclick="return $(this).getForm().sendRequest('profile:on_updateBilling', {
       extraFields: {'no_flash': true},
       onSuccess: function() {
         site.message.updateBilling();

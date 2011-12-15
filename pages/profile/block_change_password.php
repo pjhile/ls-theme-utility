@@ -15,7 +15,7 @@
     </li>
   </ul>
   
-  <a class="submit right" href="javascript:;" onclick="return $(this).getForm().sendRequest('on_updatePassword', {
+  <a class="submit right" href="javascript:;" onclick="return $(this).getForm().sendRequest('profile:on_updatePassword', {
     update: {'page': 'page:profile'},
     extraFields: {'section': 'change_password'}
   })">Save</a>
