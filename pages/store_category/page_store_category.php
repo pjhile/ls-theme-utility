@@ -1,9 +1,11 @@
+<? if(!$category): ?>
+	<div class="col-12">
+  	<h2>Sorry, the specified category was not found.</h2>
+	</div>
+<? return ?>
+<? endif ?>
+
 <div class="col-12">
-  <? if(!$category): ?>
-    <h2>Sorry, the specified category was not found.</h2>
-  <? return ?>
-  <? endif ?>
-  
   <div class="hide">
   <h1 class="left"><?= h($category->name) ?></h1>
   

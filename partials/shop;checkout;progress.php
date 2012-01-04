@@ -77,22 +77,22 @@ foreach($steps2 as $i => $step):
     <?= format_currency($estimated_total) ?>
   </li>
   <li class="billing">
-    <span class="color-3">Bill to:</span> 
     <? if($billing_info->first_name): ?>
+    <span class="color-3">Bill to:</span> 
       <?= $billing_info->first_name ?> <?= $billing_info->last_name ?>,
       <?= $billing_info->street_address ?>,
       <?= $billing_info->city ?>,
       <?= Shop_CountryState::create()->find($billing_info->state)->name ?>,
       <?= $billing_info->zip ?>
     <? endif ?>
-    <br />
-    <span class="color-3">Ship to:</span>
-    <? if($shipping_info->first_name): ?>
+    <? if(Shop_CheckoutData::shipping_required() && $shipping_info->first_name): ?>
+	    <br />
+	    <span class="color-3">Ship to:</span>
       <?= $shipping_info->first_name ?> <?= $shipping_info->last_name ?>,
       <?= $shipping_info->street_address ?>, 
       <?= $shipping_info->city ?>,
       <?= Shop_CountryState::create()->find($shipping_info->state)->name ?>,
       <?= $shipping_info->zip ?>
-    <? endif ?>
+	  <? endif ?>
   </li>
 </ul>

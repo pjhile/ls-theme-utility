@@ -1,8 +1,12 @@
 <? if(!$product): ?>
-  <h2>We are sorry, that product was not found.</h2>
+	<div class="col-12">
+  	<h2>We are sorry, that product was not found.</h2>
+  </div>
 <? return ?>
 <? elseif($product_unavailable): ?>
-  <h2>We are sorry, that product is unavailable.</h2>
+	<div class="col-12">
+  	<h2>We are sorry, that product is unavailable.</h2>
+  </div>
 <? return ?>
 <? endif ?>
 
