@@ -57,7 +57,7 @@ $zip = $shipping_info->zip ? h($shipping_info->zip) : 'Zip Code';
             update: {'states': 'shop:states'},
             extraFields: {
               'country': $('#country').val(),
-              'current_state': <?= $shipping_info->state ?>
+              'current_state': <?= $shipping_info->state ? $shipping_info->state : 0 ?>
             }
           })">
           <? foreach($countries as $country): ?>
