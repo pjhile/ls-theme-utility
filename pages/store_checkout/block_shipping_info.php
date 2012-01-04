@@ -1,18 +1,20 @@
-<h3 class="style-2">Shipping Information <img src="<?= theme_resource_url('images/colors/' . $site_settings->theme->color . '/icon-copy.png') ?>" /> <a href="javascript:;" onclick="return $('#billing_info').sendRequest('on_updateBilling', {
-      update: {'widget-cart': 'site:widget:cart'},
-      onSuccess: function() {
-        LS.sendRequest('<?= Phpr::$request->getCurrentUri() ?>', 'on_copyBillingToShipping', {
-          update: {'shipping_info': 'ls_cms_page'},
-          extraFields: {
-            'move_to': 'shipping_info',
-            'partial_step': true
-          },
-          onSuccess: function() {
-            site.message.copyBilling();
-          }
-        });
-      }
-    })">copy billing</a></h3>
+<h3 class="style-2">Shipping Information <img src="<?= theme_resource_url('images/colors/' . $site_settings->theme->color . '/icon-copy.png') ?>" /> 
+	<a href="javascript:;" onclick="return $('#billing_info').sendRequest('on_updateBilling', {
+    update: {'widget-cart': 'site:widget:cart'},
+    onSuccess: function() {
+      LS.sendRequest('<?= Phpr::$request->getCurrentUri() ?>', 'on_copyBillingToShipping', {
+        update: {'shipping_info': 'ls_cms_page'},
+        extraFields: {
+          'move_to': 'shipping_info',
+          'partial_step': true
+        },
+        onSuccess: function() {
+          site.message.copyBilling();
+        }
+      });
+    }
+  })">copy billing</a>
+</h3>
   
   <ul class="form clearfix">
     <li class="field text left">
@@ -23,12 +25,7 @@
       <label for="last_name">Last Name</label>
       <div class="text-box"><input id="last_name" name="last_name" type="text" value="<?= h($shipping_info->last_name) ?>" /></div>
     </li>
-    
     <li class="field text left">
-      <label for="email">Email Address</label>
-      <div class="text-box"><input id="email" name="email" value="<?= h($shipping_info->email) ?>" type="text" /></div>
-    </li>
-    <li class="field text right">
       <label for="phone">Phone</label>
       <div class="text-box"><input id="phone" type="text" value="<?= h($shipping_info->phone) ?>" name="phone" /></div>
     </li>
@@ -72,10 +69,10 @@
     </li>
   </ul>
   <br /><br /><br /><br /><br />
-  <input class="button-1 right wide" type="submit" value="Next &#x2192;" onclick="return $('#shipping_info').sendRequest('on_updateShipping', {
+  <input class="button-1 right wide" type="submit" value="Next &#x2192;" onclick="return $('#billing_info').sendRequest('on_updateBilling', {
       update: {'widget-cart': 'site:widget:cart'},
       onSuccess: function() {
-        $('#billing_info').sendRequest('on_updateBilling', {
+        $('#shipping_info').sendRequest('on_updateShipping', {
           update: {'page': 'ls_cms_page'},
           extraFields: {
             'checkout_step': '<?= $checkout_step ?>',

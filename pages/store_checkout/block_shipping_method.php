@@ -1,5 +1,4 @@
 <?
-
 extract(array_merge(array(
   'sales_email' => $site_settings->company->sales_email,
   'payment_method' => null
