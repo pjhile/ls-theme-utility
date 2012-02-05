@@ -97,8 +97,12 @@ jQuery(document).ready(function($) {
 		setTimeout(function() {
 			var current = menu.find('a.active');
 		
-			if(current.length)
-				$('span', current).each(activate_sidebar_item);
+			if(current.length) {
+				current.parents('li').addClass('active').each(function() {
+					$(this).children('a').addClass('active');
+					$(this).children('ul:first').show();
+				});//('active').parent().toggleClass('active').children('ul:first').toggle();
+			}
 			else
 				$('a.parent span', menu).each(activate_sidebar_item);
 		}, timeout);

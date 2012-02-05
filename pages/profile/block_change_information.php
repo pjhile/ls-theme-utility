@@ -85,7 +85,7 @@ $billing_states = Shop_CountryState::create(true)->where('country_id=?', $billin
 </div>
 
 <script>
-      LS.sendRequest('<?= Phpr::$request->getCurrentUri() ?>', 'on_action', {
+      LS.sendRequest('<?= root_url(Phpr::$request->getCurrentUri()) ?>', 'on_action', {
           update: {'shipping_info': 'ls_cms_page'},
           extraFields: {
             'section': 'change_shipping',

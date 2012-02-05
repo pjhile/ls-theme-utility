@@ -7,7 +7,7 @@ $shipping_states = Shop_CountryState::create(true)->where('country_id=?', $shipp
 
   <h3 class="style-2 block left">Shipping Information <img src="<?= theme_resource_url('images/colors/' . $site_settings->theme->color . '/icon-copy.png') ?>" /> <a href="javascript:;" onclick="return $('#billing_info').sendRequest('profile:on_updateBilling', {
       onSuccess: function() {
-        LS.sendRequest('<?= Phpr::$request->getCurrentUri() ?>', 'profile:on_copyBillingToShipping', {
+        LS.sendRequest('<?= root_url(Phpr::$request->getCurrentUri()) ?>', 'profile:on_copyBillingToShipping', {
           update: {'shipping_info': 'ls_cms_page'},
           extraFields: {
             'section': 'change_shipping',
