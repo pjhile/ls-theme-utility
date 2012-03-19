@@ -17,10 +17,11 @@ theme, please follow these instructions:
 Alternatively, and for version control, the `templates` directory contains filesystem CMS templates. 
 The primary purpose of these is to track template changes.
 
-This package contains module dependencies, located in the `modules` directory. Please follow these instructions:  
-1. In the `modules` directory, please select all folders, right click, and copy them.  
-2. Go to the `modules` directory in your LemonStand installation, right click, and paste them.  
-3. Log out of LemonStand, and log back in.
+This package contains module dependencies. Please install these from the Marketplace:
+
+* Tweak
+* Contact
+* Profile
 
 Configuration
 ---------------------------------------------------------------------------------------------------
