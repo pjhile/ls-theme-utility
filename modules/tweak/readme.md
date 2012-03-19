@@ -1,5 +1,5 @@
 # ls-module-tweak
-Provides assistance developing themes for your store.
+Provides assistance developing themes for your site.
 
 ## Installation
 1. Download [Tweak](https://github.com/limewheel/ls-module-tweak/zipball/master).
@@ -15,6 +15,9 @@ Provides assistance developing themes for your store.
 * [Source](https://github.com/limewheel/ls-module-tweak)
 
 ## Usage
+
+### Site settings
+
 You can use the `site:settings` partial any way you want, for example:
 
 ```php
@@ -148,4 +151,32 @@ Then you can use the site settings globally (in your templates) like this:
 
 ```php
 <h1><?= $site_settings->company->title ?></h1>
+```
+
+### Content aliases
+
+There is minor support for text alias content replacement. For example, the HTML below will output the associated alias content:
+
+```
+Site URL: [site_url]<br />
+Root URL: [root_url]<br />
+Customer First Name: [customer.first_name]<br />
+Customer Last Name: [customer.last_name]<br />
+```
+
+Here is the complete listing:
+
+* `[site_url]` - provides the URL of the installation, including domain.
+* `[root_url]` - provides the path of the installation from the root domain.
+* `[customer.first_name]` - provides the first name of the currently logged in customer.
+* `[customer.last_name]` - provides the first name of the currently logged in customer.
+
+### Development
+
+You can add your own aliases by creating your own custom module, and binding on the `tweak:onGetAliases` event. From that callback, return an array of your replacements. For example:
+
+```php
+return array(
+	'my_special_url' => root_url('/my_special_url')
+);
 ```

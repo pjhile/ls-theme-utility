@@ -1,1 +1,5 @@
-#1 Initial version
+#1|0.0.1 Initialize.
+#2|0.0.2 Creation of `site:contact` email template is now automatic.
+#3|0.0.3 Fixed `site:contact` creation. Removed `site:settings` dependency. Minor bug fixes.
+#4|0.0.4 Necessary fix.
+#5|0.0.5 Change template type to `system`.
