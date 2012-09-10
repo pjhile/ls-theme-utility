@@ -87,7 +87,7 @@
   <input class="button-1 right wide" type="submit" value="Next &#x2192;" onclick="return $('#billing_info').sendRequest('on_updateBilling', {
       update: {'widget-cart': 'site:widget:cart'},
       onSuccess: function() {
-        LS.sendRequest('<?= Phpr::$request->getCurrentUri() ?>', 'on_copyBillingToShipping', {
+        LS.sendRequest('<?= root_url(Phpr::$request->getCurrentUri()) ?>', 'on_copyBillingToShipping', {
           update: {'shipping_info': 'ls_cms_page'},
           extraFields: {
             'move_to': 'shipping_info',
